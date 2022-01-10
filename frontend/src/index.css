@@ -15,3 +15,23 @@ h3 {
 .rating span {
   margin: 0.1rem;
 }
+.linkStyle {
+  text-decoration: none;
+  color: #fff;
+}
+.linkStyle2 {
+  text-decoration: none;
+}
+.linkStyle:hover {
+  text-decoration: none;
+  color: #fff;
+}
+.linkStyle2:hover {
+  text-decoration: none;
+}
+.fas-style {
+  margin-right: 10px;
+}
+.fa-style {
+  margin-right: 2px;
+}
