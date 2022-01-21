@@ -32,10 +32,9 @@ const PlaceOrderScreen = () => {
   const { order, success, error } = orderCreate
 
   useEffect(() => {
+    //console.log(cart)
     if (success) {
       history(`/order/${order._id}`)
-      //dispatch({ type: USER_DETAILS_RESET })
-      //dispatch({ type: ORDER_CREATE_RESET })
     }
     // eslint-disable-next-line
   }, [history, success])

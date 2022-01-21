@@ -6,6 +6,7 @@ import Header from './components/Header';
 import CartScreen from './screens/CartScreen'
 import HomeScreen from './screens/HomeScreen'
 import LoginScreen from './screens/LoginScreen'
+import OrderScreen from './screens/OrderScreen'
 import PaymentSreen from './screens/PaymentSreen'
 import PlaceOrderScreen from './screens/PlaceOrderScreen'
 import ProductScreen from './screens/ProductScreen'
@@ -27,6 +28,7 @@ function App() {
             <Route path='/login/shipping' element={<ShippingScreen />} />
             <Route path='/profile' element={<ProfileScreen />} />
             <Route path='/product/:id' element={<ProductScreen />} />
+            <Route path='/order/:id' element={<OrderScreen />} />
             <Route path='/cart'>
               <Route path='' element={<CartScreen />} />
               <Route path=':id' element={<CartScreen />} />

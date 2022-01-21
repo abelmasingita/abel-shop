@@ -8,6 +8,7 @@ import {
 } from '../constants/orderConstants'
 import axios from 'axios'
 import { logout } from './userAction'
+//import { CART_CLEAR_ITEMS } from '../constants/cartConstants'
 
 export const createOrder = (order) => async (dispatch, getState) => {
   try {
@@ -27,27 +28,17 @@ export const createOrder = (order) => async (dispatch, getState) => {
     }
 
     const { data } = await axios.post(`/api/orders`, order, config)
-
     dispatch({
       type: ORDER_CREATE_SUCCESS,
       payload: data,
     })
-    dispatch({
-      type: ORDER_CREATE_SUCCESS,
-      payload: data,
-    })
-    localStorage.setItem('userInfo', JSON.stringify(data))
   } catch (error) {
-    const message =
-      error.response && error.response.data.message
-        ? error.response.data.message
-        : error.message
-    if (message === 'Not authorized, token failed') {
-      dispatch(logout())
-    }
     dispatch({
       type: ORDER_CREATE_FAIL,
-      payload: message,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
     })
   }
 }
