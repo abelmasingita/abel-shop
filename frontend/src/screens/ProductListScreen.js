@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Table, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import {
