@@ -47,6 +47,7 @@ function App() {
               <Route path=':id' element={<CartScreen />} />
             </Route>
             <Route path='/' element={<HomeScreen />} exact />
+            <Route path='/search/:keyword' element={<HomeScreen />} />
           </Routes>
         </Container>
       </main>

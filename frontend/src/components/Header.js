@@ -1,10 +1,13 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap'
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, Link, Route, Routes, useNavigate } from 'react-router-dom'
 import { logout } from '../actions/userAction'
+import SearchBox from './SearchBox'
 
 const Header = () => {
+  const history = useNavigate()
+
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
 
@@ -24,6 +27,9 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
+            <Routes>
+              <Route element={<SearchBox navigate={history} />} />
+            </Routes>
             <Nav className='ml-auto'>
               <Nav.Link>
                 <Link to='/cart' className='linkStyle fas-style'>
